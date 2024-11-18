@@ -6,6 +6,7 @@ const Team = (props) => {
     const titleStyle = {borderColor: props.primaryColor}
 
     return (
+        props.workers.length > 0 &&
         <section className="team-wrapper" style={wrapperStyle}>
             <h3 style={titleStyle}>{props.title}</h3>
             <div className="cards-wrapper">
