@@ -28,13 +28,6 @@ const Form = (props) => {
             team: team
         })
         clearForm();
-        // eh a mesma coisa:
-        //props.onWorkerRegister({
-        //    name,
-        //    position,
-        //    imageUrl,
-        //    team:
-        //})
     }
 
     return (
