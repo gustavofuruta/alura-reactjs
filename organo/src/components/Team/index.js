@@ -4,7 +4,6 @@ import Card from '../Card'
 const Team = (props) => {
     const wrapperStyle = {backgroundColor: props.secondaryColor}
     const titleStyle = {borderColor: props.primaryColor}
-    console.log(props)
 
     return (
         <section className="team-wrapper" style={wrapperStyle}>
