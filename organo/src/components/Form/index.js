@@ -4,17 +4,7 @@ import Select from '../Input/Select'
 import Button from '../Button'
 import './Form.css'
 
-const Form = () => {
-
-    const teams = [
-        'Programacao',
-        'Devops',
-        'Backend',
-        'Frontend',
-        'UX e Design',
-        'Mobile',
-        'Inovacao e gestao'
-    ]
+const Form = (props) => {
 
     const [name, setName] = useState('')
     const [position, setPosition] = useState('')
@@ -22,12 +12,29 @@ const Form = () => {
     const [team, setTeam] = useState('')
 
 
+    const clearForm = () => {
+        setName('')
+        setPosition('')
+        setImageUrl('')
+        setTeam('')
+    }
+
     const onSave = (e) => {
         e.preventDefault();
-        console.log(name);
-        console.log(position);
-        console.log(imageUrl);
-        console.log(team);
+        props.onWorkerRegister({
+            name: name,
+            position: position,
+            imageUrl: imageUrl,
+            team: team
+        })
+        clearForm();
+        // eh a mesma coisa:
+        //props.onWorkerRegister({
+        //    name,
+        //    position,
+        //    imageUrl,
+        //    team:
+        //})
     }
 
     return (
@@ -55,12 +62,13 @@ const Form = () => {
                     title={'Imagem'} 
                     placeholder={'Informe o endereço da imagem'} 
                     classText={''} 
-                    onUpdate={value => setImageUrl(value)} 
+                    value={imageUrl}
+                    onUpdate={value => setImageUrl(value)}
                 />
                 <Select 
                     required={true}
                     title={'Cargo'}
-                    options={teams}
+                    options={props.teams}
                     value={team}
                     onUpdate={value => setTeam(value)}
                 />

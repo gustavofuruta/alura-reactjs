@@ -6,7 +6,7 @@ const Select = (props) => {
             <label>{props.title}</label>
             <select onChange={e => props.onUpdate(e.target.value)} required={props.required} value={props.value}>
                 <option value='default'>Selecione uma opcao...</option>
-                {props.options.map((option) => <option key={option}>{option}</option>)}
+                {props.options.map((option) => <option key={option.id} value={option.id}>{option.name}</option>)}
             </select>
             
         </div>
