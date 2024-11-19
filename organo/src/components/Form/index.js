@@ -60,7 +60,7 @@ const Form = (props) => {
                 />
                 <Select 
                     required={true}
-                    title={'Cargo'}
+                    title={'Time'}
                     options={props.teams}
                     value={team}
                     onUpdate={value => setTeam(value)}
